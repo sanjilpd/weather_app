@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Django Templates</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div class="jumbotron">
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-offset-4 is-4">
+            <form method="POST">
+              {% csrf_token %}
+              <div class="field has-addons">
+                <div class="control is-expanded">
+                  {{form.name}}
+
+                </div>
+                <div class="control">
+                  <button type="submit" class="button is-info"> Add City</button>
+
+                </div>
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+  </div>
+
+   <div class="jumbotron">
+     <h1>Weather API</h1>
+     <p> City: {{city_detail.city}}</p>
+     <p> Temperature: {{city_detail.temperature}}</p>
+     <p> description: {{city_detail.description}} </p>
+     <img src="https://openweathermap.org/img/w/{{city_detail.icon}}.png" alt="Image">
+   </div>
+   <p>Created By: Sanjil Pradhan</p>
+
+</div>
+
+</body>
+</html>
